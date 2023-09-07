@@ -1,0 +1,34 @@
+{{ partial "header.html" . }}
+<div class="article-meta">
+<h1 class="title">{{ .Title | markdownify }}</h1>
+{{ with .Params.subtitle }}<h2 class="subtitle">{{ . }}</h2>{{ end }}
+<h3 class="meta-line">
+  <span>{{ partial "meta.html" . }}</span>
+  <span class="term">
+  {{ with .Params.categories }}
+  {{ range first 1 . }}
+  {<a href="{{ relURL (print "categories/" . "/" | urlize) }}" class="term-cat">{{ . }}</a>}
+  {{ end }}
+  {{ end }}
+  {{ with .Params.tags }}
+  {{ $len := sub (len .) 1 }}
+  {{ range $i, $v := . }}
+  <a href="{{ relURL (print "tags/" $v "/" | urlize) }}" class="term-tag">{{ if eq $i 0 }}[{{ end }}{{ $v }}{{ if lt $i $len }},{{ else }}]{{ end }}</a>
+  {{ end }}
+  {{ end }}
+  </span>
+</h3>
+</div>
+
+<div class="main">
+{{ .Content }}
+</div>
+
+{{ if .Section }}
+<nav class="post-nav">
+  <span>{{ with .NextInSection }}&larr; <a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}</span>
+  <span>{{ with .PrevInSection }}<a href="{{ .RelPermalink }}">{{ .Title }}</a> &rarr;{{ end }}</span>
+</nav>
+{{ end }}
+
+{{ partial "footer.html" . }}

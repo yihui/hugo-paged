@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    {{ range (slice "style" "fonts" "custom") }}
+    <link rel="stylesheet" href="{{ printf "css/%s.css" . | relURL }}">
+    {{ end }}
+    {{ partial "head_custom.html" . }}
+  </head>
+
+  <body{{ if .IsPage }} class="single"{{ end }}>
+    <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
+    <nav class="nav-top small">
+    <div class="logo">
+      <a href="{{ "/" | relURL }}">
+      {{ with default (dict "text" "LOGO" "img" nil) $.Site.Params.logo }}
+      {{ if .img }}
+      <img src="{{ .img | relURL }}" alt="{{ .text }}" />
+      {{ else }}
+      {{ .text }}
+      {{ end }}
+      {{ end }}
+      </a>
+    </div>
+    <div class="menu">
+      {{ range .Site.Menus.main }}
+      <span{{ if eq (relURL .URL) $.Page.RelPermalink }} class="active"{{ end }}><a href="{{ relURL .URL }}">{{ .Name }}</a></span>
+      {{ end }}
+    </div>
+    </nav>

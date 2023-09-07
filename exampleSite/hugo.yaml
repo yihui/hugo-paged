@@ -1,0 +1,26 @@
+baseurl: "/"
+languageCode: "en-US"
+title: "A Hugo theme inspired by paged.js"
+theme: "hugo-paged"
+ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
+footnotereturnlinkcontents: "↩"
+
+menu:
+  main:
+    - name: Github
+      url: "https://github.com/yihui/hugo-paged"
+      weight: 10
+
+params:
+  description: "A website built through Hugo with the hugo-paged theme."
+  logo:
+    text: LOGO TEXT
+    img: # a path to the logo
+  footer: "&copy; [Yihui Xie](https://yihui.org) {Year} | [Categories](/categories/) | [Tags](/tags/) | [Subscribe](/index.xml)"
+
+markup:
+  highlight:
+    codeFences: false
+  goldmark:
+    renderer:
+      unsafe: true

@@ -1,0 +1,12 @@
+name = "Paged"
+license = "MIT"
+licenselink = "https://github.com/yihui/hugo-paged/blob/main/LICENSE.md"
+description = "A theme inspired by the paged.js website with a feel of printed pages"
+homepage = "https://paged.yihui.org"
+tags = ["minimal", "blog", "personal", "clean", "simple", "journal", "light", "docs", "minimalist", "archive"]
+features = ["blog", "docs"]
+min_version = "0.18"
+
+[author]
+  name = "Yihui Xie"
+  homepage = "https://yihui.org"

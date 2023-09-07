@@ -1,0 +1,2 @@
+{{ with .Params.author }}<span class="author">{{ . }}</span>{{ end }}
+{{ if (gt .Params.date 0) }}<span class="date">{{ .Date.Format "2006-01-02" }}</span>{{ end }}

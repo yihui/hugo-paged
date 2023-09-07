@@ -1,0 +1,7 @@
+{{ $summary := "" }}
+{{ if .Description }}
+  {{ $summary = (markdownify .Description) }}
+{{ else }}
+  {{ $summary = ((delimit (findRE "(?s)(<p.*?>.*?</p>)" .Content) "[&hellip;] ") | plainify | truncate (default 200 $.Site.Params.summary_length) (default " &hellip;" $.Site.Params.text.truncated ) | replaceRE "&amp;" "&" | safeHTML) }}
+{{ end }}
+<blockquote>{{ $summary }}</blockquote>

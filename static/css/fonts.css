@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Linden Hill';
+  font-style: normal;
+  src: url('https://cdn.jsdelivr.net/gh/theleagueof/linden-hill/webfonts/LindenHill-webfont.woff') format('woff');
+}
+@font-face {
+  font-family: 'Linden Hill';
+  font-style: italic;
+  src: url('https://cdn.jsdelivr.net/gh/theleagueof/linden-hill/webfonts/LindenHill-Italic-webfont.woff') format('woff');
+}
+body {
+  font-family: 'Linden Hill', Palatino, serif;
+}
+code {
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 85%;
+}
+.menu, .meta-line, footer {
+  font-family: Jost, Optima, Candara, sans-serif;
+}
