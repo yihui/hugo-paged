@@ -21,6 +21,25 @@
       {{ end }}
     {{ end }}
 
+    {{ $autoImage := false }}
+    {{ range (findRE "<img src=\"https?://[^\"]+" .Content 1) }}
+    {{ $autoImage = true }}
+    <meta name="twitter:image" content="{{ replaceRE "<img src=\"" "" . | htmlUnescape }}">
+    {{ end }}
+    {{ with .Site.Params.twitterImage }}
+    {{ if not $autoImage }}
+    <meta name="twitter:image" content="{{ absURL . }}">
+    {{ end }}
+    {{ end }}
+
+    {{ if .Keywords }}
+    <meta property="keywords" content ="{{ delimit .Keywords ", " }}">
+    {{ end }}
+
+    {{ with .OutputFormats.Get "RSS" }}
+    <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}">
+    {{ end }}
+
     {{ range (slice "style" "fonts" "custom") }}
     <link rel="stylesheet" href="{{ printf "css/%s.css" . | relURL }}">
     {{ end }}
