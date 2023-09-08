@@ -6,6 +6,7 @@
 </div>
 {{ else }}
 <h1 class="title">{{ .Title | markdownify }}{{ if eq .Kind "term" }}<span class="small subtitle"> | <a href="{{ urlize .Type | relURL }}/">{{ .Type }}</a></span>{{ end }}</h1>
+{{ with .Params.subtitle }}<h2 class="subtitle">{{ . }}</h2>{{ end }}
 <div class="main">
 {{ .Content }}
 {{ range .Pages }}
