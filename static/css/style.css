@@ -18,7 +18,7 @@ body {
 }
 
 /* header and footer areas */
-.nav-top, .single .meta-line, .nav-bottom {
+.nav-top, .single .meta-line, .nav-bottom, .post-nav {
   display: flex;
   justify-content: space-between;
 }
@@ -79,15 +79,19 @@ pre code, pre code:hover {
 }
 
 /* misc elements */
-a {
-  text-decoration: none;
-  color: initial;
-}
 .main, .home {
   hyphens: auto;
 }
 .main, .home, .terms {
   flex-grow: 1;
+}
+a {
+  text-decoration: none;
+  color: initial;
+}
+a:hover {
+  position: relative;
+  inset: 1px 0 0 1px;
 }
 .single .main a, .home a {
   border-bottom: 1px dashed;
@@ -98,6 +102,9 @@ a {
 .single .main h3 {
   font-variant: small-caps;
   text-align: center;
+}
+li {
+  margin: 4px 0;
 }
 hr {
   border-style: dashed;
@@ -118,6 +125,12 @@ blockquote, .toc-list, .toc-list ul {
   background: #f9f9f9;
   border-left-width: 5px;
   padding: 3px 1em 3px;
+}
+.post-nav span {
+  width: calc(50% - 1em);
+}
+.post-nav span + span {
+  text-align: right;
 }
 table {
   min-width: 50%;
@@ -232,7 +245,7 @@ thead, tfoot, tr:nth-child(even), code {
     min-height: calc(100vh - 5em);
     margin: 2em auto;
   }
-  .main, .home {
+  .main {
     margin: auto;
     max-width: var(--text-width);
     width: var(--text-width);
@@ -241,6 +254,9 @@ thead, tfoot, tr:nth-child(even), code {
     width: 100vw;
     max-width: calc(var(--body-width) - 4rem);
     margin-left: calc(var(--text-width)/2 + 2rem - var(--body-width)/2);
+  }
+  .home {
+    padding: 0 2em;
   }
   .title {
     margin-top: 2em;
