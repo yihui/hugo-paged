@@ -1,2 +1,16 @@
-{{ with .Params.author }}<span class="author">{{ . }}</span>{{ end }}
-{{ if (gt .Params.date 0) }}<span class="date">{{ .Date.Format "2006-01-02" }}</span>{{ end }}
+{{ if .IsPage }}
+{{ with or (or .Params.author (index (or .Site.Params.author dict) .Section)) "" }}
+<span class="author">{{ . }}</span>
+{{ end }}
+{{ $date := "" }}
+{{ if .Params.date }}
+{{ $date = .Date.Format "2006-01-02" }}
+{{ else }}
+{{ with .Lastmod }}
+{{ $date = .Format "2006-01-02" }}
+{{ end }}
+{{ end }}
+{{ with $date }}
+<span class="date">{{ . }}</span>
+{{ end }}
+{{ end }}
