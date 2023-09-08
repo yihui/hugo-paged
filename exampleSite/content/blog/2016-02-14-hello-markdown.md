@@ -31,6 +31,8 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.[^1]
 
 [^1]: I'm sure you are bored by the text here.
 
+\* * *
+
 A blockquote (a gray bar at the left and lightgray background):
 
 > Quisque mattis volutpat lorem vitae feugiat. Praesent porta est quis porta

@@ -1,4 +1,4 @@
-{{ if (in (string .Content) "<img ") }}
+{{ if or (in (string .Content) "<img ") (in (string .Content) "<p>* * *</p>") }}
 <script src="https://cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
 {{ end }}
 {{ if (in (string .Content) "</pre>") }}
