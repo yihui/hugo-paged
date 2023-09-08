@@ -46,19 +46,20 @@
     {{ partial "head_custom.html" . }}
   </head>
 
-  <body{{ if .IsPage }} class="single"{{ end }}>
+  {{ $section := (replaceRE "^/([^/]+)/.*" "$1" .RelPermalink) }}
+  <body class="{{ if .IsPage }}single{{ end }}{{ with $section }} {{ . }}{{ end }}{{ with .Params.page_class }} {{ . }}{{ end }}">
     <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
     <nav class="nav-top small">
     <div class="logo">
-      <a href="{{ "/" | relURL }}">
-      {{ with default (dict "text" "LOGO" "img" nil) $.Site.Params.logo }}
+    {{ with default .Site.Params.logo.en (index .Site.Params.logo $section) }}
+      <a href="{{ relURL .url }}">
       {{ if .img }}
-      <img src="{{ .img | relURL }}" alt="{{ .text }}" />
+      <img src="{{ relURL .img }}" alt="{{ .alt }}" />
       {{ else }}
-      {{ .text }}
-      {{ end }}
+      {{ .alt }}
       {{ end }}
       </a>
+    {{ end }}
     </div>
     <div class="menu">
       {{ range .Site.Menus.main }}

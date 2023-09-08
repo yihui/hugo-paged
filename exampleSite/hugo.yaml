@@ -14,8 +14,9 @@ menu:
 params:
   description: "A website built through Hugo with the hugo-paged theme."
   logo:
-    text: LOGO TEXT
-    img: # a path to the logo
+    en:
+      alt: LOGO TEXT
+      img: # a path to the logo
   footer: "&copy; [Yihui Xie](https://yihui.org) {Year} | [Categories](/categories/) | [Tags](/tags/) | [Subscribe](/index.xml)"
 
 markup:

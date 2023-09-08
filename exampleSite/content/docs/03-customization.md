@@ -19,11 +19,12 @@ If you want to add a logo to the left of the top navigation bar, you can use the
 ```yaml
 params:
   logo:
-    text: "LOGO TEXT"
-    img: # a path to the logo
+    en:
+      alt: "LOGO TEXT"
+      img: # a path to the logo
 ```
 
-If the image (`img`) is not provided, the logo text will be displayed instead.
+If the image (`img`) is not provided, the `alt` text will be displayed instead.
 
 ## CSS
 
