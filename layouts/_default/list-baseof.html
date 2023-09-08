@@ -6,9 +6,10 @@
 </div>
 {{ else }}
 <h1 class="title">{{ .Title | markdownify }}{{ if eq .Kind "term" }}<span class="small subtitle"> | <a href="{{ urlize .Type | relURL }}/">{{ .Type }}</a></span>{{ end }}</h1>
-{{ with .Params.subtitle }}<h2 class="subtitle">{{ . }}</h2>{{ end }}
-<div class="main">
+{{ with .Params.subtitle }}<h2 class="subtitle">{{ . | markdownify }}</h2>{{ end }}
+<div class="main{{ if not .Content }} archive{{ end }}">
 {{ .Content }}
+{{ block "page-list" . }}
 {{ range .Pages }}
 <h2 class="toc-line"><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a><span class="dots"></span><span class="page-num small"></span></h2>
 <div class="meta-line small">
@@ -17,6 +18,8 @@
 {{ block "summary" . }}
 {{ end }}
 {{ end }}
+{{ end }}
+{{ partial "main_extra.html" . }}
 </div>
 {{ end }}
 
