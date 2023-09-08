@@ -3,7 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    {{ if eq .RelPermalink "/" }}
+    <title>{{ .Site.Title }}</title>
+    <meta property="og:title" content="{{ .Site.Title }}">
+    <meta property="og:type" content="website">
+    {{ else }}
+    <title>{{ .Title }}{{ with .Params.subtitle }} - {{ . }} {{ end }} - {{ .Site.Title }}</title>
+    <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+    {{ end }}
+    <meta name="twitter:card" content="summary">
+    {{ if eq .RelPermalink "/" }}
+    <meta property="description" content="{{ .Site.Params.description }}">
+    {{ else }}
+      {{ with (trim (partial "summary.html" .) "\n ") }}
+      <meta property="description" content="{{- . -}}">
+      <meta property="og:description" content="{{- . -}}">
+      {{ end }}
+    {{ end }}
+
     {{ range (slice "style" "fonts" "custom") }}
     <link rel="stylesheet" href="{{ printf "css/%s.css" . | relURL }}">
     {{ end }}
