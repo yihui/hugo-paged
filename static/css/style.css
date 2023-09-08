@@ -250,7 +250,7 @@ thead, tfoot, tr:nth-child(even), code {
     max-width: var(--text-width);
     width: var(--text-width);
   }
-  .main > pre, .main > table, .fullwidth {
+  .main > pre, table, .fullwidth {
     width: 100vw;
     max-width: calc(var(--body-width) - 4rem);
     margin-left: calc(var(--text-width)/2 + 2rem - var(--body-width)/2);
