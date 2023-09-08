@@ -5,7 +5,6 @@ title: Home
 <style type="text/css">
 .home {
   text-align: center;
-  flex-grow: 1;
 }
 .home h1 {
   font-size: 3em;

@@ -1,13 +1,13 @@
 :root {
   --body-width: 992px;
-  --text-width: 43rem;
+  --text-width: 620px;
 }
 * {
   box-sizing: border-box;
 }
 body {
   max-width: var(--body-width);
-  min-height: 100vh;
+  min-height: calc(100vh - 3em);
   margin: auto;
   padding: 1em;
   line-height: 1.5;
@@ -18,9 +18,12 @@ body {
 }
 
 /* header and footer areas */
-nav, .single .meta-line {
+.nav-top, .single .meta-line, .nav-bottom {
   display: flex;
   justify-content: space-between;
+}
+.home + footer > .nav-bottom {
+  display: block;
 }
 .nav-top {
   margin-bottom: 1em;
@@ -29,6 +32,12 @@ nav, .single .meta-line {
 .logo {
   font-weight: bold;
   margin-top: .5rem;
+}
+.logo img {
+  display: none;
+  max-height: 4rem;
+  position: absolute;
+  top: 2em;
 }
 .menu {
   text-transform: uppercase;
@@ -46,6 +55,9 @@ footer {
   text-align: center;
   margin-top: 2rem;
 }
+.menu-bottom a + a::before {
+  content: " · ";
+}
 
 /* code */
 pre code {
@@ -58,19 +70,26 @@ pre code {
 pre code:not([class]) {
   background: none;
 }
+code {
+  hyphens: none;
+}
+pre code, pre code:hover {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
 
 /* misc elements */
 a {
   text-decoration: none;
   color: initial;
 }
-.main {
+.main, .home {
   hyphens: auto;
 }
-.main, .terms {
+.main, .home, .terms {
   flex-grow: 1;
 }
-.single .main a {
+.single .main a, .home a {
   border-bottom: 1px dashed;
 }
 .single .main h2 {
@@ -87,6 +106,10 @@ hr {
 img, iframe, video {
   max-width: 100%;
 }
+img[src$="#border"] {
+  border: 1px solid #ddd;
+  box-shadow: 5px 5px 5px #eee;
+}
 blockquote, .toc-list, .toc-list ul {
   border-left: 2px solid #ddd;
   padding-left: 1em;
@@ -97,6 +120,7 @@ blockquote, .toc-list, .toc-list ul {
   padding: 3px 1em 3px;
 }
 table {
+  min-width: 50%;
   margin: auto;
   border-top: 1px solid #aaa;
   border-bottom: 1px solid #aaa;
@@ -198,14 +222,17 @@ thead, tfoot, tr:nth-child(even), code {
     font-size: 6em;
     inset: 0;
   }
+  .logo img {
+    display: block;
+  }
 }
 
-@media (min-width: 992px) {
+@media only screen and (min-width: 992px) {
   body {
-    min-height: calc(100vh - 4em);
+    min-height: calc(100vh - 5em);
     margin: 2em auto;
   }
-  .main {
+  .main, .home {
     margin: auto;
     max-width: var(--text-width);
     width: var(--text-width);
@@ -221,5 +248,8 @@ thead, tfoot, tr:nth-child(even), code {
   .title::before {
     font-size: 9em;
     inset: -.1em 0;
+  }
+  pre code {
+    white-space: pre;
   }
 }
