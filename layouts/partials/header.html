@@ -47,6 +47,8 @@
   </head>
 
   {{ $section := (replaceRE "^/([^/]+)/.*" "$1" .RelPermalink) }}
+  {{ if eq $section "/" }}{{ $section = "" }}{{ end }}
+  {{ $.Scratch.Set "section" $section }}
   <body class="{{ if .IsPage }}single{{ end }}{{ with $section }} {{ . }}{{ end }}{{ with .Params.page_class }} {{ . }}{{ end }}">
     <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
     <nav class="nav-top small">
@@ -62,7 +64,7 @@
     {{ end }}
     </div>
     <div class="menu">
-      {{ range .Site.Menus.main }}
+      {{ range (default .Site.Menus.main (index .Site.Menus $section)) }}
       <span{{ if eq (relURL .URL) $.Page.RelPermalink }} class="active"{{ end }}><a href="{{ relURL .URL }}">{{ .Name }}</a></span>
       {{ end }}
     </div>
