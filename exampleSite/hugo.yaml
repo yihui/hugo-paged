@@ -17,7 +17,7 @@ params:
     en:
       alt: LOGO TEXT
       img: # a path to the logo
-  footer: "&copy; [Yihui Xie](https://yihui.org) {Year} | [Categories](/categories/) | [Tags](/tags/) | [Subscribe](/index.xml)"
+  footer: "&copy; [Yihui Xie](https://yihui.org) {Year}"
 
 markup:
   highlight:
