@@ -22,6 +22,8 @@ The rest of HTML and CSS code was written from scratch (well, not really---from 
 
 I'd like to thank paged.js developers for their great piece of work, without which I wouldn't be able to create this theme.
 
-I hope this theme won't be widely known or used...
+I hope this theme won't be widely known or used because I'm currently using it for my own website...[^2] but I'm all for open source, so [here you go](https://github.com/yihui/hugo-paged)! If you decide to use this theme, I encourage you to tweak the CSS to make your site look at least a little different.
 
 [^1]: When I was developing [the **pagedown** package](https://github.com/rstudio/pagedown) in R.
+
+[^2]: Paged.js developers are more generous than me. They were quite happy to know that I created this Hugo theme, and were not concerned that other websites would use their website theme. Hat tip to them!
