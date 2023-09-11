@@ -51,6 +51,9 @@ body {
   border-bottom: 5px solid;
   margin-bottom: -5px;
 }
+.menu .optional {
+  display: none;
+}
 footer {
   text-align: center;
   margin-top: 2rem;
@@ -235,8 +238,8 @@ thead, tfoot, tr:nth-child(even), code {
     font-size: 6em;
     inset: 0;
   }
-  .logo img {
-    display: block;
+  .logo img, .menu .optional {
+    display: inline-block;
   }
 }
 

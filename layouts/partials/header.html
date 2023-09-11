@@ -65,7 +65,12 @@
     </div>
     <div class="menu">
       {{ range (default .Site.Menus.main (index .Site.Menus $section)) }}
-      <span{{ if eq (relURL .URL) $.Page.RelPermalink }} class="active"{{ end }}><a href="{{ relURL .URL }}">{{ .Name }}</a></span>
+      {{ $mclass := or .Params.class slice }}
+      {{ if eq (relURL .URL) $.Page.RelPermalink }}
+      {{ $mclass = append (slice "active") $mclass }}
+      {{ end }}
+      {{ $mclass = delimit $mclass " " }}
+      <span{{ with $mclass }} class="{{ . }}"{{ end }}><a href="{{ relURL .URL }}">{{ .Name }}</a></span>
       {{ end }}
     </div>
     </nav>

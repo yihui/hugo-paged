@@ -10,6 +10,8 @@ menu:
     - name: Github
       url: "https://github.com/yihui/hugo-paged"
       weight: 10
+      params:
+        class: [optional]
 
 params:
   description: "A website built through Hugo with the hugo-paged theme."
