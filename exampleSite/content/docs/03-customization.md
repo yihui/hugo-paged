@@ -31,7 +31,7 @@ If the image (`img`) is not provided, the `alt` text will be displayed instead.
 You can create a file `static/css/custom.css` to store your custom CSS code. For example, if you don't like code blocks to be full-width, you can reset their width:
 
 ```css
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .main > pre {
     width: 100%;
     margin-left: auto;

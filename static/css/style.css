@@ -216,6 +216,14 @@ thead, tfoot, tr:nth-child(even), code {
   body {
     padding: 3.5em 2.5em;
   }
+  .main {
+    margin: auto;
+    width: var(--text-width);
+  }
+  .main > pre, table, .fullwidth {
+    width: calc(min(100vw, var(--body-width)) - 5rem);
+    margin-left: calc(50% + 2.5rem - min(100vw, var(--body-width)) / 2);
+  }
   .crop-h, .crop-v, .crop-c {
     position: absolute;
     z-index: -1;
@@ -250,16 +258,6 @@ thead, tfoot, tr:nth-child(even), code {
   body {
     min-height: calc(100vh - 5em);
     margin: 2em auto;
-  }
-  .main {
-    margin: auto;
-    max-width: var(--text-width);
-    width: var(--text-width);
-  }
-  .main > pre, table, .fullwidth {
-    width: 100vw;
-    max-width: calc(var(--body-width) - 4rem);
-    margin-left: calc(var(--text-width)/2 + 2rem - var(--body-width)/2);
   }
   .home {
     padding: 0 2em;
