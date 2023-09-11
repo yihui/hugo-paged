@@ -45,7 +45,7 @@ body {
 }
 .menu span {
   display: inline-block;
-  margin: .5rem 0 0 1em;
+  margin: .5rem 0 0 .5em;
 }
 .menu .active {
   border-bottom: 5px solid;
@@ -233,6 +233,9 @@ thead, tfoot, tr:nth-child(even), code {
   .crop-c {
     inset: 1em;
     border: 1.5em solid white;
+  }
+  .menu span {
+    margin-left: 1em;
   }
   .title::before {
     font-size: 6em;
