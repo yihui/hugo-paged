@@ -124,6 +124,9 @@ img[src$="#border"] {
   background-color: #f8f8f8;
   padding: .5em;
 }
+#TableOfContents > ul > li > ul li {
+  margin-right: 2em;
+}
 blockquote, .toc-list, .toc-list ul {
   border-left: 2px solid #ddd;
   padding-left: 1em;
@@ -198,14 +201,14 @@ thead, tfoot, tr:nth-child(even), code {
   inset: -.15em 0;
   z-index: -1;
 }
-.small, .term, .footnotes {
+.small, .term, .footnotes, #TableOfContents > ul > li > ul li {
   font-size: .9em;
 }
 .footnotes > hr {
   max-width: 20em;
   margin-left: 0;
 }
-.terms {
+.terms, #TableOfContents > ul > li > ul {
   display: flex;
   flex-wrap: wrap;
 }
@@ -255,6 +258,9 @@ thead, tfoot, tr:nth-child(even), code {
   }
   .logo img, .menu .optional {
     display: inline-block;
+  }
+  .twocolumn {
+    columns: 2;
   }
 }
 

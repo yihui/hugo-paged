@@ -35,6 +35,15 @@ params:
 
 To always disable TOC for a particular post, set the YAML field `show_toc: false` in the post. To always show TOC, set `show_toc: true`.
 
+The TOC will use a full-width two-column layout on large screens by default when the number of items is greater than or equal to 16. This number can be configured in the `toc_twocolumn` parameter, e.g.,
+
+```yaml
+params:
+  toc_twocolumn: 10
+```
+
+You can also enable or disable this behavior in a post's YAML field `toc_twocolumn` (set it to `true` or `false`).
+
 ## CSS
 
 You can create a file `static/css/custom.css` to store your custom CSS code. For example, if you don't like code blocks to be full-width, you can reset their width:
