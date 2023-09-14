@@ -21,7 +21,7 @@
 </div>
 
 <div class="main">
-{{ $toc_len := strings.Count "</a></li>" .TableOfContents }}
+{{ $toc_len := strings.Count `<li><a` .TableOfContents }}
 {{ if (default (ge $toc_len (default .Site.Params.toc_threshold 3)) .Params.show_toc) }}
 {{ if (default (ge $toc_len (default .Site.Params.toc_twocolumn 16)) .Params.toc_twocolumn) }}
 {{ replace .TableOfContents `<nav ` `<nav class="fullwidth twocolumn" ` | safeHTML }}
