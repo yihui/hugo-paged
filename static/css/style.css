@@ -124,6 +124,9 @@ img[src$="#border"] {
   background-color: #f8f8f8;
   padding: .5em;
 }
+#TableOfContents > ul {
+  margin: 0 auto;
+}
 #TableOfContents > ul > li > ul li {
   margin-right: 2em;
 }
