@@ -26,6 +26,15 @@ params:
 
 If the image (`img`) is not provided, the `alt` text will be displayed instead.
 
+The table of contents (TOC) is automatically added to each post by default when the number of items in TOC is greater than or equal to 3. This number can be set in the `toc_threshold` parameter, e.g.,
+
+```yaml
+params:
+  toc_threshold: 4
+```
+
+To always disable TOC for a particular post, set the YAML field `show_toc: false` in the post. To always show TOC, set `show_toc: true`.
+
 ## CSS
 
 You can create a file `static/css/custom.css` to store your custom CSS code. For example, if you don't like code blocks to be full-width, you can reset their width:
