@@ -64,9 +64,16 @@
     {{ end }}
     </div>
     <div class="menu">
-      {{ range (default .Site.Menus.main (index .Site.Menus $section)) }}
+      {{ $active := "" }}
+      {{ $menu := (default .Site.Menus.main (index .Site.Menus $section)) }}
+      {{ range $menu }}
+      {{ if and (hasPrefix $.Page.RelPermalink (relURL .URL)) (gt (len .URL) (len $active)) }}
+      {{ $active = .URL }}
+      {{ end }}
+      {{ end }}
+      {{ range $menu }}
       {{ $mclass := or .Params.class slice }}
-      {{ if hasPrefix $.Page.RelPermalink (relURL .URL) }}
+      {{ if eq $active .URL }}
       {{ $mclass = append (slice "active") $mclass }}
       {{ end }}
       {{ $mclass = delimit $mclass " " }}
