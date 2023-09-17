@@ -5,6 +5,9 @@ theme: "hugo-paged"
 ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
 footnotereturnlinkcontents: "↩"
 
+outputs:
+  home: [html, rss, json]
+
 menu:
   main:
     - name: Github
