@@ -298,7 +298,7 @@ thead, tfoot, tr:nth-child(even), code {
     --border-color: #999;
     --box-shadow: 5px 5px 5px #ccc;
   }
-  html, img, video, iframe, .comments {
+  html, img, video, iframe {
     filter: invert(1);
   }
 }
