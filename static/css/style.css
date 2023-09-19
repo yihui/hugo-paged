@@ -1,6 +1,8 @@
 :root {
   --body-width: 992px;
   --text-width: 620px;
+  --bg-body: white;
+  --border-color: #ddd;
 }
 * {
   box-sizing: border-box;
@@ -8,6 +10,7 @@
 body {
   max-width: var(--body-width);
   min-height: calc(100vh - 3em);
+  background-color: var(--bg-body);
   margin: auto;
   padding: 1em;
   line-height: 1.5;
@@ -65,7 +68,7 @@ footer {
 /* code */
 pre code {
   display: block;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   box-shadow: 5px 5px 5px #eee;
   padding: 1em;
   overflow-x: auto;
@@ -100,7 +103,7 @@ a:hover {
   border-bottom: 1px dashed;
 }
 .single .main h2 {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border-color);
 }
 .single .main h3 {
   font-variant: small-caps;
@@ -111,13 +114,13 @@ li {
 }
 hr {
   border-style: dashed;
-  color: #ddd;
+  color: var(--border-color);
 }
 img, iframe, video {
   max-width: 100%;
 }
 img[src$="#border"] {
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   box-shadow: 5px 5px 5px #eee;
 }
 #TableOfContents {
@@ -131,7 +134,7 @@ img[src$="#border"] {
   margin-right: 2em;
 }
 blockquote, .toc-list, .toc-list ul {
-  border-left: 2px solid #ddd;
+  border-left: 2px solid var(--border-color);
   padding-left: 1em;
 }
 .single blockquote {
@@ -152,7 +155,7 @@ table {
   border-bottom: 1px solid #aaa;
 }
 table thead th {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border-color);
 }
 th, td {
   padding: 5px;
@@ -167,7 +170,7 @@ thead, tfoot, tr:nth-child(even), code {
   align-items: flex-end;
 }
 .dots {
-  border-bottom: 2px dotted #ddd;
+  border-bottom: 2px dotted var(--border-color);
   margin: 0 .5em .5em;
   min-width: 10rem;
   flex-grow: 1;
@@ -199,7 +202,8 @@ thead, tfoot, tr:nth-child(even), code {
   font-style: normal;
   font-weight: normal;
   font-size: 6em;
-  color: #eee;
+  color: var(--border-color);
+  opacity: .5;
   position: absolute;
   inset: -.15em 0;
   z-index: -1;
@@ -250,7 +254,7 @@ thead, tfoot, tr:nth-child(even), code {
   }
   .crop-c {
     inset: 1em;
-    border: 1.5em solid white;
+    border: 1.5em solid var(--bg-body);
   }
   .menu span {
     margin-left: 1em;
