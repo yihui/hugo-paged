@@ -10,7 +10,7 @@ menu:
 
 I immediately loved the design of [the paged.js website](https://pagedjs.org) when I first saw it a couple of years ago.[^1] I have published a few books before, so the crop marks on the website caught my attention first, which gave me a familiar feel of printed books. The second thing that I appreciated was the rotated floral heart bullet behind the title of each page, i.e.,
 
-<div style="font-size:9em;text-align:center;color:#ddd;">❧</div>
+<div style="font-size:9em;text-align:center;color:#ccc;">❧</div>
 
 So I wrote a Hugo theme that mimics the style of the paged.js website. I tried not to look at its HTML/CSS source code, but I had to read the source to figure out:
 
