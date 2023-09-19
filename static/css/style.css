@@ -290,3 +290,15 @@ thead, tfoot, tr:nth-child(even), code {
     white-space: pre;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-body: #dedad6;
+    --bg-block: #d6d1cc;
+    --border-color: #999;
+    --box-shadow: 5px 5px 5px #ccc;
+  }
+  html, img, video, iframe, .comments {
+    filter: invert(1);
+  }
+}
