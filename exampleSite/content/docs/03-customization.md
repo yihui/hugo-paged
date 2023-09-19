@@ -73,7 +73,7 @@ If you want to choose a different symbol such as a snow flake to be placed behin
 
 Any character that can be displayed in your web browser is okay. For example, you can choose one dingbat from <https://en.wikipedia.org/wiki/Dingbat>.
 
-<div style="font-size:9em;color:#ddd;text-align:justify;max-height:5em;overflow-y:scroll;">
+<div class="fullwidth" style="font-size:9em;color:#ccc;text-align:justify;max-height:5em;overflow-y:scroll;">
 ✁	✂	✃	✄	✆	✇	✈	✉	✎	✏ ✐	✑	✒	✓	✔	✕	✖	✗	✘	✙	✚	✛	✜	✝	✞	✟ ✠	✡	✢	✣	✤	✥	✦	✧	✩	✪	✫	✬	✭	✮	✯ ✰	✱	✲	✳	✴	✵	✶	✷	✸	✹	✺	✻	✼	✽	✾	✿ ❀	❁	❂	❃	❄	❅	❆	❇	❈	❉	❊	❋	❍	❏ ❐	❑	❒	❔	❕	❖	❘	❙	❚	❛	❜	❝	❞		❡	❢	❣	❤	❥	❦	❧	❨	❩	❪	❫	❬	❭	❮	❯ ❰	❱	❲	❳	❴	❵ ➔	 ➘	➙	➚	➛	➜	➝	➞	➟ ➠	➡	➢	➣	➤	➥	➦	➧	➨	➩	➪	➫	➬	➭	➮	➯	➱	➲	➳	➴	➵	➶	➷	➸	➹	➺	➻	➼	➽	➾
 </div>
 
