@@ -234,7 +234,7 @@ thead, tfoot, tr:nth-child(even), code {
     margin: auto;
     width: var(--text-width);
   }
-  .main > pre, table, .fullwidth {
+  pre, table, .fullwidth {
     width: calc(min(100vw, var(--body-width)) - 5rem);
     margin-left: calc(50% + 2.5rem - min(100vw, var(--body-width)) / 2);
   }
