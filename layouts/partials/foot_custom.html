@@ -1,15 +1,46 @@
-{{ if or (in (string .Content) "<img ") (in (string .Content) "<p>* * *</p>") }}
-<script src="https://cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
+{{- $has_code := (in .Content "</code></pre>") -}}
+{{- $has_img := (in .Content `<img `) -}}
+{{- $has_toc := .Scratch.Get "has_toc" -}}
+{{- if $has_toc -}}
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fix-toc.min.js" defer></script>
 {{ end }}
-{{ if (in (string .Content) "</pre>") }}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rstudio/markdown/inst/resources/prism-xcode.css">
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+{{- if or $has_toc $has_code (in .Content "</table>") -}}
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fullwidth.min.js" defer></script>
 {{ end }}
-{{ if and (not .Params.disable_math) (or (in (string .Content) "\\") (in (string .Content) "$")) }}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
-<script src="https://cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/combine/npm/katex/dist/katex.min.js,npm/katex/dist/contrib/auto-render.min.js,npm/@xiee/utils/js/render-katex.js" defer></script>
+{{- if or $has_img (in .Content "<p>* * *</p>") -}}
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
 {{ end }}
-
-{{ partial "foot_extra.html" . }}
+{{- if $has_img -}}
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/alt-title.min.js" defer></script>
+{{ end }}
+{{- if not (default (not $has_code) .Params.disable_highlight) -}}
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/rstudio/markdown/inst/resources/prism-xcode.css">
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+{{ end }}
+{{- if not (default (not (in .Content "<code>$")) .Params.disable_math) -}}
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/math-code.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/combine/npm/katex/dist/katex.min.js,npm/katex/dist/contrib/auto-render.min.js,npm/@xiee/utils/js/render-katex.js" defer></script>
+{{ end }}
+{{- if $has_code -}}
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/copy-button.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@xiee/utils/css/copy-button.min.css">
+{{ end }}
+{{- if (findRE `<p>(—|―|---|&mdash;)` .Content | len) -}}
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/right-quote.min.js" defer></script>
+{{ end }}
+{{- if or (in .Content "</kbd>") (in (replace .Content "</code></pre>" "") "</code>") -}}
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css">
+{{ end }}
+{{- if (in .Content `class="footnotes"`) -}}
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fix-footnote.min.js" defer></script>
+{{ end }}
+{{- if (findRE `<h[1-6] ` .Content | len) -}}
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
+{{ end }}
+{{- if (findRE `<a href="https?://` .Content | len) -}}
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/external-link.min.js" defer></script>
+{{ end }}
+{{- partial "foot_extra.html" . -}}

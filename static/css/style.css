@@ -106,6 +106,12 @@ a:hover {
 .single .main a, .home a {
   border-bottom: 1px dashed;
 }
+.anchor {
+  display: none;
+}
+:hover > .anchor {
+  display: inline;
+}
 .single .main h2 {
   border-bottom: 1px solid var(--border-color);
 }

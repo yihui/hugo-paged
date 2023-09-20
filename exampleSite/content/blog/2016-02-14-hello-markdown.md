@@ -31,7 +31,7 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.[^1]
 
 [^1]: I'm sure you are bored by the text here.
 
-\* * *
+\* \* \*
 
 A blockquote (a gray bar at the left and lightgray background):
 
@@ -44,6 +44,8 @@ A blockquote (a gray bar at the left and lightgray background):
 > dis parturient montes, nascetur ridiculus mus. Nulla sodales quam sit amet
 > tincidunt egestas. In et turpis at orci vestibulum ullamcorper. Aliquam sed
 > ante libero. Sed hendrerit arcu lacus.
+>
+> --- by Someone
 
 A full-width piece of syntax-highlighted code with a drop-shadow effect:
 
@@ -72,10 +74,9 @@ An image (automatically centered):
 
 A math equation (render by KaTeX):
 
-`$$|x| = \begin{cases}
-x & \text{if } x \geq 0 \\
--x & \text{if } x < 0 
-\end{cases}$$`
+`$$|x| = \begin{cases} x & \text{if } x \geq 0 \\ -x & \text{if } x < 0  \end{cases}$$`
+
+How about `Ctrl + C` and `Ctrl + V`?
 
 ## Another Section
 
