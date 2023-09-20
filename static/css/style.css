@@ -103,7 +103,7 @@ a:hover {
   position: relative;
   inset: 1px 0 0 1px;
 }
-.single .main a, .home a {
+.single .main a:not(.footnote-ref), .home a {
   border-bottom: 1px dashed;
 }
 .anchor {
