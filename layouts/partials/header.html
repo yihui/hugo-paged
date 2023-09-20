@@ -64,19 +64,19 @@
     {{ end }}
     </div>
     <div class="menu">
-      {{ $active := "" }}
-      {{ $menu := (default .Site.Menus.main (index .Site.Menus $section)) }}
+      {{- $active := "" -}}
+      {{- $menu := (default .Site.Menus.main (index .Site.Menus $section)) -}}
+      {{- range $menu -}}
+      {{- if and (hasPrefix $.Page.RelPermalink (relURL .URL)) (gt (len .URL) (len $active)) -}}
+      {{- $active = .URL -}}
+      {{- end -}}
+      {{- end -}}
       {{ range $menu }}
-      {{ if and (hasPrefix $.Page.RelPermalink (relURL .URL)) (gt (len .URL) (len $active)) }}
-      {{ $active = .URL }}
-      {{ end }}
-      {{ end }}
-      {{ range $menu }}
-      {{ $mclass := or .Params.class slice }}
-      {{ if eq $active .URL }}
-      {{ $mclass = append (slice "active") $mclass }}
-      {{ end }}
-      {{ $mclass = delimit $mclass " " }}
+      {{- $mclass := or .Params.class slice -}}
+      {{- if eq $active .URL -}}
+      {{- $mclass = append (slice "active") $mclass -}}
+      {{- end -}}
+      {{- $mclass = delimit $mclass " " -}}
       <span{{ with $mclass }} class="{{ . }}"{{ end }}><a href="{{ relURL .URL }}">{{ .Name }}</a></span>
       {{ end }}
     </div>
