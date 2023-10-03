@@ -49,7 +49,7 @@
   {{ $section := (replaceRE "^/([^/]+)/.*" "$1" .RelPermalink) }}
   {{ if eq $section "/" }}{{ $section = "" }}{{ end }}
   {{ $.Scratch.Set "section" $section }}
-  <body class="{{ if .IsPage }}single{{ end }}{{ with $section }} {{ . }}{{ end }}{{ with .Params.page_class }} {{ . }}{{ end }}">
+  <body class="{{ if .IsPage }}single{{ end }}{{ with $section }} {{ . }}{{ end }}{{ if (in .Content `<div class="footnotes"`) }} has-sidenotes{{ end }}{{ with .Params.page_class }} {{ . }}{{ end }}">
     <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
     <nav class="nav-top small">
     <div class="logo">
