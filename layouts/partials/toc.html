@@ -1,0 +1,1 @@
+{{ replaceRE `(?s)(<nav [^>]+>)\s*<ul>\s*<li>(\s*<ul>.+?</ul>)\s*</li>\s*</ul>(\s*</nav>)` `$1$2$3` .TableOfContents | safeHTML }}

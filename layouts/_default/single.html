@@ -21,13 +21,14 @@
 </div>
 
 <div class="main">
-{{ $toc_len := strings.Count `<li><a` .TableOfContents }}
+{{ $toc := partial "toc.html" . }}
+{{ $toc_len := strings.Count `<li><a` $toc }}
 {{ if (default (ge $toc_len (default .Site.Params.toc_threshold 3)) .Params.show_toc) }}
 {{ .Scratch.Set "has_toc" true }}
 {{ if (default (ge $toc_len (default .Site.Params.toc_twocolumn 16)) .Params.toc_twocolumn) }}
-{{ replace .TableOfContents `<nav ` `<nav class="fullwidth twocolumn" ` | safeHTML }}
+{{ replace $toc `<nav ` `<nav class="fullwidth twocolumn" ` | safeHTML }}
 {{ else }}
-{{ .TableOfContents }}
+{{ $toc }}
 {{ end }}
 {{ end }}
 {{ if (and (eq (getenv "HUGO_BLOGDOWN_POST_RELREF") "") (and (and .Params.date (lt (now.AddDate 0 0 ($.Site.Params.holdDays | default -90)) .Date)) (in (string .Content) "<!--# ON_HOLD -->"))) }}
