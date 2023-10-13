@@ -197,13 +197,13 @@ thead, tfoot, tr:nth-child(even), code {
 .author + .date::before {
   content: " / ";
 }
-.title, .toc-line > a {
+h1.title, .toc-line > a {
   font-style: italic;
 }
-.title {
+h1.title {
   margin-top: 1em;
 }
-.title::before {
+h1.title::before {
   content: "❧";
   font-style: normal;
   font-weight: normal;
@@ -265,7 +265,7 @@ thead, tfoot, tr:nth-child(even), code {
   .menu span {
     margin-left: 1em;
   }
-  .title::before {
+  h1.title::before {
     font-size: 6em;
     inset: 0;
   }
@@ -285,10 +285,10 @@ thead, tfoot, tr:nth-child(even), code {
   .home {
     padding: 0 2em;
   }
-  .title {
+  h1.title {
     margin-top: 2em;
   }
-  .title::before {
+  h1.title::before {
     font-size: 9em;
     inset: -.1em 0;
   }

@@ -53,7 +53,7 @@ Isn't that clever? Thank you, paged.js developers!
 I also love the floral heart behind the title of each page, which is a dingbat:
 
 ```css
-.title::before {
+h1.title::before {
   content: "❧";
 }
 ```

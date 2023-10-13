@@ -62,11 +62,11 @@ You can create a file `static/css/custom.css` to store your custom CSS code. For
 If you want to choose a different symbol such as a snow flake to be placed behind the page title, you can define the CSS:
 
 ```css
-.title::before { content: "❆"; }
+h1.title::before { content: "❆"; }
 ```
 
 <style type="text/css">
-.title::before {
+h1.title::before {
   content: "❆";
 }
 </style>
