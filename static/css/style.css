@@ -214,7 +214,7 @@ h1.title::before {
   inset: -.15em 0;
   z-index: -1;
 }
-.small, .term, .footnotes, #TableOfContents > ul > li > ul li {
+.small, .term, .footnotes, li li {
   font-size: .9em;
 }
 .footnotes > hr {
