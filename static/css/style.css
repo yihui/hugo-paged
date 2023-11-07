@@ -46,7 +46,6 @@ body {
 }
 .menu {
   text-transform: uppercase;
-  margin-left: 2em;
 }
 .menu span {
   display: inline-block;
@@ -261,6 +260,9 @@ h1.title::before {
   .crop-c {
     inset: 1em;
     border: 1.5em solid var(--bg-body);
+  }
+  .menu {
+    margin-left: 2em;
   }
   .menu span {
     margin-left: 1em;
