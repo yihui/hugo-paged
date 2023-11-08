@@ -147,6 +147,9 @@ blockquote, .toc-list, .toc-list ul {
   border-left-width: 5px;
   padding: 3px 1em 3px;
 }
+.post-nav {
+  margin-top: 1rem;
+}
 .post-nav span {
   width: calc(50% - 1em);
 }
