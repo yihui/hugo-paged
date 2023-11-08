@@ -1,3 +1,6 @@
+{{- if (in .Content "</dl>") -}}
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/dl-fieldset.min.js" defer></script>
+{{ end }}
 {{- $has_code := (in .Content "</code></pre>") -}}
 {{- $has_img := (in .Content `<img `) -}}
 {{- $has_toc := .Scratch.Get "has_toc" -}}
