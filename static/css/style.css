@@ -96,14 +96,15 @@ pre code, pre code:hover {
 }
 a {
   text-decoration: none;
+  border-bottom: 1px dashed;
   color: initial;
 }
 :not(.logo) > a:hover {
   position: relative;
   inset: 1px 0 0 1px;
 }
-.single .main a:not(.footnote-ref), .home a {
-  border-bottom: 1px dashed;
+nav a, footer a, .archive a, sup a {
+  border-bottom: none;
 }
 .anchor {
   display: none;
