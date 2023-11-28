@@ -46,4 +46,7 @@
 {{- if (findRE `<a href="https?://` .Content | len) -}}
 <script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/external-link.min.js" defer></script>
 {{ end }}
+{{- if (in .Content "</ol>") -}}
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/ol-id.min.js" defer></script>
+{{ end }}
 {{- partial "foot_extra.html" . -}}
