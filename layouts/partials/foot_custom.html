@@ -7,9 +7,6 @@
 {{- if $has_toc -}}
 <script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fix-toc.min.js" defer></script>
 {{ end }}
-{{- if or $has_toc $has_code (in .Content "</table>") -}}
-<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fullwidth.min.js" defer></script>
-{{ end }}
 {{- if or $has_img (in .Content "<p>* * *</p>") -}}
 <script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
 {{ end }}
@@ -48,5 +45,8 @@
 {{ end }}
 {{- if (in .Content "</ol>") -}}
 <script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/ol-id.min.js" defer></script>
+{{ end }}
+{{- if or $has_toc $has_code (in .Content "</table>") -}}
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fullwidth.min.js" defer></script>
 {{ end }}
 {{- partial "foot_extra.html" . -}}
