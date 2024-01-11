@@ -43,6 +43,7 @@ body {
   max-height: 4rem;
   position: absolute;
   top: 2em;
+  background-color: var(--bg-body);
 }
 .menu {
   text-transform: uppercase;
