@@ -99,9 +99,11 @@ a {
   border-bottom: 1px dashed;
   color: initial;
 }
-:not(.logo) > a:hover {
-  position: relative;
-  inset: 1px 0 0 1px;
+@media (hover: hover) and (pointer: fine) {
+  :not(.logo) > a:hover {
+    position: relative;
+    inset: 1px 0 0 1px;
+  }
 }
 nav a, footer a, .archive a, sup a {
   border-bottom: none;
