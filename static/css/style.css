@@ -109,10 +109,8 @@ nav a, footer a, .archive a, sup a {
   border-bottom: none;
 }
 .anchor {
-  display: none;
-}
-:hover > .anchor {
-  display: inline;
+  &:not(:hover > *) { display: none; }
+  & > a::before { content: "#"; }
 }
 .single .main h2 {
   border-bottom: 1px solid var(--border-color);
