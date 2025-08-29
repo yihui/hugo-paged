@@ -13,10 +13,10 @@
     {{ end }}
     <meta name="twitter:card" content="summary">
     {{ if eq .RelPermalink "/" }}
-    <meta property="description" content="{{ .Site.Params.description }}">
+    <meta name="description" content="{{ .Site.Params.description }}">
     {{ else }}
       {{ with (trim (partial "summary.html" .) "\n ") }}
-      <meta property="description" content="{{- . -}}">
+      <meta name="description" content="{{- . -}}">
       <meta property="og:description" content="{{- . -}}">
       {{ end }}
     {{ end }}
