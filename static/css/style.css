@@ -229,12 +229,8 @@ h1.title::before {
   display: flex;
   flex-wrap: wrap;
 }
-.terms {
+.terms li, .term {
   margin-left: 2em;
-}
-.terms li {
-  margin-left: 2em;
-  margin-bottom: 1.5em;
 }
 .term-cat + .term-tag::before {
   content: " · ";
