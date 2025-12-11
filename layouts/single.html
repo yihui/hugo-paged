@@ -16,6 +16,7 @@
   <a href="{{ relURL (print "tags/" $v "/" | urlize) }}" class="term-tag">{{ if eq $i 0 }}[{{ end }}{{ $v }}{{ if lt $i $len }},{{ else }}]{{ end }}</a>
   {{ end }}
   {{ end }}
+  {{ partial "term_extra.html" . }}
   </span>
 </h3>
 </div>
