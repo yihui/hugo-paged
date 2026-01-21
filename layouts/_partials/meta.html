@@ -1,5 +1,5 @@
 {{ if .IsPage }}
-{{ with or (or .Params.author (index (or .Site.Params.author dict) .Section)) "" }}
+{{ with or (or .Params.author (index (or .Site.Params.author dict) (or ($.Scratch.Get "lang") .Section))) "" }}
 <span class="author">{{ . }}</span>
 {{ end }}
 {{ $date := "" }}
