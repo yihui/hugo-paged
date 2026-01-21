@@ -50,7 +50,7 @@
   {{ if eq $section "/" }}{{ $section = "" }}{{ end }}
   {{ $.Scratch.Set "section" $section }}
   {{ $class := complement (slice nil "") (slice (cond .IsPage "single" "") $section .Params.page_class ($.Scratch.Get "lang") (cond (in .Content `<div class="footnotes"`) "has-sidenotes" "")) }}
-  {{ if len $class }}<body class="{{ delimit $class " " }}">{{ else }}<body>{{ end }}
+  {{ if len $class }}<body class="{{ delimit (uniq $class) " " }}">{{ else }}<body>{{ end }}
     <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
     <nav class="nav-top small">
     <div class="logo">
