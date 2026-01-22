@@ -11,29 +11,16 @@
     <title>{{ .Title }}{{ with .Params.subtitle }} - {{ . }} {{ end }} - {{ .Site.Title }}</title>
     <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
     {{ end }}
-    <meta name="twitter:card" content="summary">
     {{ if eq .RelPermalink "/" }}
     <meta name="description" content="{{ .Site.Params.description }}">
     {{ else }}
       {{ with (trim (partial "summary.html" .) "\n ") }}
       <meta name="description" content="{{- . -}}">
-      <meta property="og:description" content="{{- . -}}">
       {{ end }}
     {{ end }}
 
-    {{ $autoImage := false }}
-    {{ range (findRE "<img src=\"https?://[^\"]+" .Content 1) }}
-    {{ $autoImage = true }}
-    <meta name="twitter:image" content="{{ replaceRE "<img src=\"" "" . | htmlUnescape }}">
-    {{ end }}
-    {{ with .Site.Params.twitterImage }}
-    {{ if not $autoImage }}
-    <meta name="twitter:image" content="{{ absURL . }}">
-    {{ end }}
-    {{ end }}
-
-    {{ if .Keywords }}
-    <meta property="keywords" content ="{{ delimit .Keywords ", " }}">
+    {{ with .Keywords }}
+    <meta property="keywords" content ="{{ delimit . ", " }}">
     {{ end }}
 
     {{ with .OutputFormats.Get "RSS" }}
