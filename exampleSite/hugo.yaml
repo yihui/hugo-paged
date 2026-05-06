@@ -1,5 +1,5 @@
 baseurl: "/"
-languageCode: "en-US"
+locale: "en-US"
 title: "A Hugo theme inspired by paged.js"
 theme: "hugo-paged"
 ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
