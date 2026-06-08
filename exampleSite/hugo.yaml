@@ -24,6 +24,9 @@ params:
       img: # a path to the logo
   footer: "&copy; [Yihui Xie](https://yihui.org) {Year}"
 
+security:
+  allowContent: ['.*']
+
 markup:
   highlight:
     codeFences: false
