@@ -1,5 +1,5 @@
 {{ partial "header.html" . }}
-<div class="article-meta">
+<header class="article-meta">
 <h1 class="title">{{ .Title | markdownify }}</h1>
 {{ with .Params.subtitle }}<h2 class="subtitle">{{ . | markdownify }}</h2>{{ end }}
 <h3 class="meta-line">
@@ -19,9 +19,9 @@
   {{ partial "term_extra.html" . }}
   </span>
 </h3>
-</div>
+</header>
 
-<div class="main">
+<main class="main">
 {{ $toc := partial "toc.html" . }}
 {{ $toc_len := strings.Count `<li><a` $toc }}
 {{ if (default (ge $toc_len (default .Site.Params.toc_threshold 3)) .Params.show_toc) }}
@@ -35,5 +35,5 @@
 {{ .Content }}
 {{ partial "post_nav.html" . }}
 {{ partial "main_extra.html" . }}
-</div>
+</main>
 {{ partial "footer.html" . }}

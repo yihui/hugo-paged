@@ -129,7 +129,7 @@ hr {
 img, iframe, video {
   max-width: 100%;
 }
-#TableOfContents {
+#TOC {
   background-color: var(--bg-block);
   padding: .5em;
   & > ul {
@@ -224,7 +224,7 @@ h1.title::before {
   max-width: 20em;
   margin-left: 0;
 }
-.terms, #TableOfContents > ul > li > ul {
+.terms, #TOC > ul > li > ul {
   display: flex;
   flex-wrap: wrap;
 }
